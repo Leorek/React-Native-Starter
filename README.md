@@ -9,3 +9,4 @@
 ### Requirements
 - [Node](https://nodejs.org/) >= 5.0.0 (Installation with [nvm](https://github.com/creationix/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows) it's highly recommended)
 - [npm](https://npmjs.com) >= 3
+- [Android SDK](https://developer.android.com/studio/index.html) if you are developing for Android.
