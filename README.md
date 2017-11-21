@@ -7,5 +7,5 @@
 | [React Native Navigation](https://github.com/wix/react-native-navigation) | App-wide support for 100% native navigation with an easy cross-platform interface. |
 
 ### Requirements
-- [Node](https://nodejs.org/) >= 5.0.0
+- [Node](https://nodejs.org/) >= 5.0.0 (Installation with [nvm](https://github.com/creationix/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows) it's highly recommended)
 - [npm](https://npmjs.com) >= 3
