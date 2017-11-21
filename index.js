@@ -1,4 +1,11 @@
-import { AppRegistry } from 'react-native';
-import App from './App';
+import {Navigation} from 'react-native-navigation';
+import {registerScreens} from './Routes';
 
-AppRegistry.registerComponent('ReactNativeStarter', () => App);
+registerScreens();
+
+Navigation.startSingleScreenApp({
+  screen: {
+    screen: 'Landing',
+    title: 'Welcome'
+  }
+});
