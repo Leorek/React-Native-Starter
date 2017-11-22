@@ -7,21 +7,17 @@ import {
   Button
 } from 'react-native';
 
-export default class Landing extends Component {
-  static navigatorStyle = {
-    navBarHidden: true
-  };
-
+export default class Main extends Component {
+    
   render() {
     return ( 
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native Starter App.
+          Main Screen
         </Text>
         <Text style={styles.instructions}>
-          Let's start with a simple navigation.
+          This is the main screen of this app.
         </Text>
-        <Button title={"Go to Main Screen"} onPress={()=>{this.props.navigator.push({ screen: 'Main', title: "Main"})}} />
       </View>
     );
   }
