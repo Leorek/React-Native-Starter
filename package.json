@@ -12,10 +12,14 @@
 		"react-native-navigation": "^1.1.283"
 	},
 	"devDependencies": {
+		"@types/react": "^16.0.25",
+		"@types/react-native": "^0.50.7",
 		"babel-jest": "21.2.0",
 		"babel-preset-react-native": "4.0.0",
 		"jest": "21.2.1",
-		"react-test-renderer": "16.0.0"
+		"react-native-typescript-transformer": "^1.1.4",
+		"react-test-renderer": "16.0.0",
+		"typescript": "^2.6.1"
 	},
 	"jest": {
 		"preset": "react-native"
