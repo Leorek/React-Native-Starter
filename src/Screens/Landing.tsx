@@ -9,7 +9,10 @@ export default class Landing extends Component<ILanding, {}> {
   public static navigatorStyle = {
     navBarHidden: true
   }
-  private that = this
+  public constructor(props) {
+    super(props)
+    this.goMain = this.goMain.bind(this)
+  }
 
   public goMain() {
     this.props.navigator.push({ screen: 'Main', title: 'Main' })
