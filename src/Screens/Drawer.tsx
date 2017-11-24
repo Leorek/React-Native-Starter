@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Button, StyleSheet, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
+import { Button } from 'react-native-elements'
 
 export default class Drawer extends Component {
   public doNothing() {
@@ -8,7 +9,7 @@ export default class Drawer extends Component {
   public render() {
     return (
       <View style={styles.container}>
-        <Button title="Test button" onPress={this.doNothing} />
+        <Button raised title="Test button" onPress={this.doNothing} backgroundColor="green" />
       </View>
     )
   }

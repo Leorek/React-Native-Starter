@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Platform, StyleSheet, Text, View } from 'react-native'
+import { Platform, StyleSheet, Text, View } from 'react-native'
+import { Button } from 'react-native-elements'
 
 interface ILanding {
   navigator?: any
@@ -7,8 +8,10 @@ interface ILanding {
 
 export default class Landing extends Component<ILanding, {}> {
   public static navigatorStyle = {
-    navBarHidden: true
+    navBarBackgroundColor: '#1a8cff',
+    navBarTextColor: '#FFFFFF'
   }
+
   public constructor(props) {
     super(props)
     this.goMain = this.goMain.bind(this)
@@ -23,7 +26,7 @@ export default class Landing extends Component<ILanding, {}> {
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native Starter App.</Text>
         <Text style={styles.instructions}>Let's start with a simple navigation.</Text>
-        <Button title={'Go to Main Screen'} onPress={this.goMain} />
+        <Button title={'Go to Main Screen'} onPress={this.goMain} backgroundColor="red" />
       </View>
     )
   }

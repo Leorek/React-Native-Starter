@@ -1,3 +1,10 @@
 {
-  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"]
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "jsx-boolean-value": false,
+    "prefer-const": false,
+    "no-submodule-imports": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false
+  }
 }

@@ -1,5 +1,6 @@
 import { Navigation } from 'react-native-navigation'
 import { registerScreens } from './src/Routes'
+import AppIcons from './src/Utils/AppIcons'
 
 registerScreens()
 
@@ -15,3 +16,5 @@ Navigation.startSingleScreenApp({
     disableOpenGesture: false
   }
 })
+
+startApp()
