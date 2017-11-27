@@ -48,6 +48,7 @@ export default class Login extends Component {
         />
         <SocialIcon style={{ width: 200 }} title="Sign In With Twitter" button type="twitter" />
         <SocialIcon style={{ width: 200 }} title="Sign In With Instagram" button type="instagram" />
+        <SocialIcon style={{ width: 200 }} title="Sign In With Twitch" button type="twitch" />
       </View>
     )
   }
