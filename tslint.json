@@ -6,6 +6,7 @@
     "no-submodule-imports": false,
     "ordered-imports": false,
     "object-literal-sort-keys": false,
-    "no-console": false
+    "no-console": false,
+    "jsx-no-lambda": false
   }
 }
