@@ -1,11 +1,11 @@
 import { Navigation } from 'react-native-navigation'
 
-import Landing from './Screens/Landing'
 import Main from './Screens/Main'
 import Drawer from './Screens/Drawer'
+import Login from './Screens/Login'
 
 export function registerScreens() {
-  Navigation.registerComponent('Landing', () => Landing)
+  Navigation.registerComponent('Login', () => Login)
   Navigation.registerComponent('Main', () => Main)
   Navigation.registerComponent('Drawer', () => Drawer)
 }

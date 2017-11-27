@@ -4,9 +4,6 @@ import { Button, Avatar, Text, List, ListItem } from 'react-native-elements'
 import * as Id from 'shortid'
 
 export default class Drawer extends Component {
-  public doNothing() {
-    const a = 3 + 2
-  }
   public render() {
     let navigationItems = [
       { id: Id.generate(), title: 'Inicio', icon: 'home' },

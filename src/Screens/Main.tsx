@@ -1,12 +1,41 @@
 import React, { Component } from 'react'
-import { Button, Platform, StyleSheet, Text, View } from 'react-native'
+import { Platform, StyleSheet, Text, View, AsyncStorage } from 'react-native'
+import { Button } from 'react-native-elements'
 
-export default class Main extends Component {
+interface ILanding {
+  navigator?: any
+}
+
+export default class Landing extends Component<ILanding, {}> {
+  public static navigatorStyle = {
+    navBarBackgroundColor: '#500077',
+    navBarTextColor: '#FFFFFF',
+    statusBarColor: '#500077'
+  }
+
+  public static navigatorButtons = {
+    leftButtons: [
+      {
+        id: 'sideMenu',
+        buttonColor: 'white'
+      }
+    ]
+  }
+
+  public constructor(props) {
+    super(props)
+    this.clearToken = this.clearToken.bind(this)
+  }
+
+  public clearToken() {
+    AsyncStorage.removeItem('loginToken')
+  }
+
   public render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Main Screen</Text>
-        <Text style={styles.instructions}>This is the main screen of this app.</Text>
+        <Text style={styles.welcome}>Welcome to React Native Starter App.</Text>
+        <Button title={'Remove login token'} onPress={this.clearToken} backgroundColor="red" />
       </View>
     )
   }
@@ -14,19 +43,14 @@ export default class Main extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF'
+    backgroundColor: '#F5FCFF',
+    flex: 1,
+    justifyContent: 'center'
   },
   welcome: {
     fontSize: 20,
-    textAlign: 'center',
-    margin: 10
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5
+    margin: 10,
+    textAlign: 'center'
   }
 })

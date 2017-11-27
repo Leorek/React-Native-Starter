@@ -1,25 +1,36 @@
 import { Navigation } from 'react-native-navigation'
+import { AsyncStorage } from 'react-native'
 import { registerScreens } from './src/Routes'
 import AppIcons from './src/Utils/AppIcons'
 
 async function startApp() {
   const iconsLoaded = await AppIcons.prepareIcons()
-  console.log('Icons loaded')
+  const logged = await AsyncStorage.getItem('loginToken')
+
   registerScreens()
 
-  Navigation.startSingleScreenApp({
-    screen: {
-      screen: 'Landing',
-      title: 'Landing'
-    },
-    drawer: {
-      left: {
-        screen: 'Drawer'
+  if (logged) {
+    Navigation.startSingleScreenApp({
+      screen: {
+        screen: 'Main',
+        title: 'Main'
       },
-      disableOpenGesture: false
-    },
-    passProps: { icons: iconsLoaded }
-  })
+      drawer: {
+        left: {
+          screen: 'Drawer'
+        },
+        disableOpenGesture: false
+      },
+      passProps: { icons: iconsLoaded }
+    })
+  } else {
+    Navigation.startSingleScreenApp({
+      screen: {
+        screen: 'Login',
+        title: 'Login'
+      }
+    })
+  }
 }
 
 startApp()
