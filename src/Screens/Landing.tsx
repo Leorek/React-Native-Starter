@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Platform, StyleSheet, Text, View } from 'react-native'
 import { Button } from 'react-native-elements'
+import AppIcons from '../Utils/AppIcons'
 
 interface ILanding {
   navigator?: any
@@ -12,9 +13,19 @@ export default class Landing extends Component<ILanding, {}> {
     navBarTextColor: '#FFFFFF'
   }
 
+  public static navigatorButtons = {
+    leftButtons: [
+      {
+        id: 'sideMenu',
+        buttonColor: 'white'
+      }
+    ]
+  }
+
   public constructor(props) {
     super(props)
     this.goMain = this.goMain.bind(this)
+    console.log(props)
   }
 
   public goMain() {

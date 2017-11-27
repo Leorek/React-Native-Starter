@@ -54,3 +54,6 @@ buck-out/
 
 #vscode editor
 .vscode/
+android/app/.classpath
+ios/ReactNativeStarter/Info.plist
+ios/ReactNativeStarter.xcodeproj/project.pbxproj
