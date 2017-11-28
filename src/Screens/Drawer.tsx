@@ -1,14 +1,29 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Image, FlatList } from 'react-native'
+import { inject, observer } from 'mobx-react/native'
 import { Button, Avatar, Text, List, ListItem } from 'react-native-elements'
 import * as Id from 'shortid'
 
-export default class Drawer extends Component {
+interface IDrawer {
+  Account?: any
+  navigator?: any
+}
+
+@inject('Account')
+@observer
+export default class Drawer extends Component<IDrawer, {}> {
   public render() {
+    const { Account } = this.props
     let navigationItems = [
       { id: Id.generate(), title: 'Inicio', icon: 'home' },
       { id: Id.generate(), title: 'Mi perfil', icon: 'person' },
-      { id: Id.generate(), title: 'Ajustes', icon: 'settings' }
+      { id: Id.generate(), title: 'Ajustes', icon: 'settings' },
+      {
+        id: Id.generate(),
+        title: 'Cerrar sesión',
+        icon: 'settings',
+        onPress: () => Account.logout()
+      }
     ]
     return (
       <View style={styles.container}>
@@ -47,6 +62,7 @@ export default class Drawer extends Component {
                   title={item.title}
                   leftIcon={{ name: item.icon, color: 'black' }}
                   titleStyle={styles.listitem}
+                  onPress={item.onPress}
                   hideChevron
                 />
               )

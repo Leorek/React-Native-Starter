@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import { Platform, StyleSheet, Text, View, AsyncStorage } from 'react-native'
+import { inject, observer } from 'mobx-react/native'
 import { Button } from 'react-native-elements'
 
 interface ILanding {
+  Account: any
   navigator?: any
 }
 
+@inject('Account')
+@observer
 export default class Landing extends Component<ILanding, {}> {
   public static navigatorStyle = {
     navBarBackgroundColor: '#500077',
@@ -22,20 +26,10 @@ export default class Landing extends Component<ILanding, {}> {
     ]
   }
 
-  public constructor(props) {
-    super(props)
-    this.clearToken = this.clearToken.bind(this)
-  }
-
-  public clearToken() {
-    AsyncStorage.removeItem('loginToken')
-  }
-
   public render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native Starter App.</Text>
-        <Button title={'Remove login token'} onPress={this.clearToken} backgroundColor="red" />
       </View>
     )
   }
