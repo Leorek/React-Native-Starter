@@ -32,14 +32,16 @@ class App {
             screen: 'Drawer'
           },
           disableOpenGesture: false
-        }
+        },
+        animationType: 'fade'
       })
     } else {
       Navigation.startSingleScreenApp({
         screen: {
           screen: 'Login',
           title: 'Login'
-        }
+        },
+        animationType: 'fade'
       })
     }
   }

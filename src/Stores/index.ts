@@ -6,7 +6,6 @@ import Account from './Account'
 const stores = {
   Account
 }
-
 const hydrate = create({ storage: AsyncStorage })
 
 function hydrateStores() {
