@@ -6,20 +6,22 @@ import Provider from './Utils/MobxRnnProvider'
 import Stores from './Stores'
 import AppIcons from './Utils/AppIcons'
 
-registerScreens(Stores, Provider)
-
 class App {
   constructor() {
-    this.changeRoot()
+    this.init()
+  }
+
+  public async init() {
+    await Stores.hydrateStores()
+    registerScreens(Stores, Provider)
     observe(Stores.Account, 'authorized', change => {
       this.changeRoot()
     })
+    this.changeRoot()
   }
-  public async changeRoot() {
-    console.log('Executing change root')
-    const iconsLoaded = await AppIcons.prepareIcons()
+
+  public changeRoot() {
     if (Stores.Account.authorized) {
-      console.log('Authorized')
       Navigation.startSingleScreenApp({
         screen: {
           screen: 'Main',
@@ -30,11 +32,9 @@ class App {
             screen: 'Drawer'
           },
           disableOpenGesture: false
-        },
-        passProps: { icons: iconsLoaded }
+        }
       })
     } else {
-      console.log('Not Authorized')
       Navigation.startSingleScreenApp({
         screen: {
           screen: 'Login',

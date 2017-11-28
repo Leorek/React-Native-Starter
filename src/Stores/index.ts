@@ -3,14 +3,17 @@ import { AsyncStorage } from 'react-native'
 
 import Account from './Account'
 
-const hydrate = create({ storage: AsyncStorage })
-
 const stores = {
   Account
 }
 
-hydrate('Account', stores.Account)
+const hydrate = create({ storage: AsyncStorage })
+
+function hydrateStores() {
+  return Promise.all([hydrate('Account', stores.Account)])
+}
 
 export default {
-  ...stores
+  ...stores,
+  hydrateStores
 }
