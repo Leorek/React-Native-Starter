@@ -29,23 +29,17 @@ export default class Drawer extends Component<IDrawer, {}> {
       <View style={styles.container}>
         <View>
           <Image
-            source={{
-              uri: 'https://wallpapersite.com/images/pages/pic_w/4311.jpg',
-              width: 300,
-              height: 150
-            }}
+            source={require('../Assets/drawerBackground.jpg')}
             resizeMethod="auto"
             resizeMode="stretch"
+            style={styles.drawerTop}
           />
           <View style={styles.floatingContainer}>
             <Avatar
               width={65}
               height={65}
               rounded
-              source={{
-                uri:
-                  'https://www.windowscentral.com/sites/wpcentral.com/files/styles/larger/public/field/image/2015/04/halo-5-master-chief.jpg?itok=Rt_ff5R2'
-              }}
+              source={require('../Assets/defaultAvatar.jpg')}
               activeOpacity={0.7}
             />
             <Text style={styles.nickname}>Juan Alberto</Text>
@@ -84,6 +78,10 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: '10%',
     left: '5%'
+  },
+  drawerTop: {
+    width: 300,
+    height: 150
   },
   navigation: {
     alignItems: 'center',

@@ -25,10 +25,7 @@ export default class Login extends Component<ILogin, {}> {
           width={160}
           height={160}
           rounded
-          source={{
-            uri:
-              'https://www.windowscentral.com/sites/wpcentral.com/files/styles/larger/public/field/image/2015/04/halo-5-master-chief.jpg?itok=Rt_ff5R2'
-          }}
+          source={require('../Assets/drawerBackground.jpg')}
           activeOpacity={0.7}
           containerStyle={styles.avatar}
         />
